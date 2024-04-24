@@ -1,0 +1,5 @@
+<Project InitialTargets="NETStandardCompatError_System_Runtime_CompilerServices_Unsafe_netcoreapp3_1">
+  <Target Name="NETStandardCompatError_System_Runtime_CompilerServices_Unsafe_netcoreapp3_1"
+          Condition="'$(SuppressTfmSupportBuildWarnings)' == ''">
+  </Target>
+</Project>
