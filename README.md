@@ -1,2 +1,2 @@
-# Portfolio_T
-공개용 코드
+# Portfolio
+고성준 포트폴리오
