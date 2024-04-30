@@ -12,3 +12,5 @@ https://youtu.be/__IUSrrENis 라르메 기능 시연 영상
 "Server" -> Server에 대해서 배우며 실습한 자료들
 
 "자료구조" -> 자료구조를 공부하며 실습했던 것들을 모아둔 자료들
+
+"MYSQL" -> MYSQL와 서버를 활용하여 만든 간단한 게임
