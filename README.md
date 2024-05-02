@@ -22,7 +22,10 @@
     - Unity로 개발한 2D 탄막 슈팅게임
     - 플레이어 동작, 적과의 상호작용 기능과 스킬을 주로 구현
     - https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
-      
+![mainbook](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/969d9273-eeb1-419e-807a-f7cd7fce1f99)
+![스크린샷 2024-04-24 141225](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/a4fe6702-fc6a-4d7d-a14c-32752ab4ca6e)
+
+
 - "라르메" 2024-02-02 ~ 진행중
     - 프로그래밍 2명, 기획 3명, 그래픽 9명, QA 1명으로 이루어진 팀 프로젝트
     - Unity로 개발중인 2D 디펜스 게임 (RTS 게임이었으나 컨셉 교체로 장르 변경)
