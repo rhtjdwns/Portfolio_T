@@ -1,5 +1,6 @@
 # Portfolio
-고성준 작업물 포트폴리오
+
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/> 개요
 
 "이상한 나라의 L" -> 이상한 나라의 L 프로젝트에서 주요 담당한 Script와 빌드를 담아둔 폴더
 https://youtu.be/iLkqFxFq6Ko 이상한 나라의 L 빌드 영
