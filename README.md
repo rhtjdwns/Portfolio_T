@@ -37,12 +37,13 @@
 - Tree, Graph
 - DFS, BFS, 정렬 알고리즘(ETC. Heap, Quick...)
 - Astar, Dijkstra
+- LRU, 
 ### 디자인 패턴
 - Observer, Strategy, Decoorator
 - Factory, Singleton
 - FSM >> "Facman" FSM을 활용한 간단한 팩맨 게임 구현
 
 ## 서버
-- 소켓 프로그래밍 학습
+- 소켓 프로그래밍 학습, TCP, UDP 두 가지의 통신을 활용하여 소켓 생성 -> 연결 -> 송수신 -> 종료 단계를 배우고 이를 이용하여 1대1 통신을 사용한 간단한 대화창을 구현함.
 - 네트워크를 사용하여 두 플레이어간 먼저 골인지점을 차지하는 간단한 게임 구현 및 MYSQL를 사용하여 랭킹까지 구현 "MYSQL >> UnityServer3"
 - 과제로 두명이서 MYSQL과 Unity를 사용하여 마인크래프트 처럼 블록을 제거 및 설치하며 서버에 저장, 불러올 수 있는 기능을 구현
