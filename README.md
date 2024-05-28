@@ -21,7 +21,10 @@
     - 프로그래밍 2명, 기획 3명, 그래픽 7명으로 이루어진 팀 프로젝트
     - Unity로 개발한 2D 탄막 슈팅게임
     - 플레이어 동작, 적과의 상호작용 기능과 스킬을 주로 구현
-    - https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
+      
+    느낀점. 상황에 따른 애니메이션 조정, 시네머신에 대해서 알아가고 팀원들을 통해서 깃에서 몰랐던 부분을 더욱 충족시킬 수 있어서 좋았던 프로젝트
+  
+    https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
 ![mainbook](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/969d9273-eeb1-419e-807a-f7cd7fce1f99)
 ![스크린샷 2024-04-24 141225](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/a4fe6702-fc6a-4d7d-a14c-32752ab4ca6e)
 
@@ -31,6 +34,7 @@
     - Unity로 개발중인 2D 디펜스 게임 (RTS 게임이었으나 컨셉 교체로 장르 변경)
     - 적군과 플레이어 간의 상호작용, 플레이어가 할 수 있는 기능을 위주로 구현
     - 유니티의 Linq와 람다를 이용하여 코드 간결화, Unirx를 사용한 프로그래밍
+    - DOTS와 네비메쉬의 NavMeshSurface를 활용한 최적화 기법을 학습
 
 ## 자료구조
 - Stack, Queue, Linked List
