@@ -37,6 +37,10 @@
     - DOTS를 적용시킬 계획이었으나 DOTS를 쓸 만큼 리소스가 많지 않아 적용 시키진 못함. DOTS에 대한 이론과 사용법만 배운 상태.
     - Tilemap을 이용하여 3D 환경에서도 타일을 설치하고 NavMesh와 연동하여 유닛들이 설치한 타일 위를 인식할 수 있도록 함.
  
+      ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/de9ae743-ec03-422a-b023-9e3547834c1f)
+      ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/8a220b44-b6ce-4564-b972-0b2eea2e5813)
+
+ 
       https://youtu.be/vdxgS0z4MZg 기말 시연 영상
 
 ## 자료구조
