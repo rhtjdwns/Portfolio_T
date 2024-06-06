@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da91f06fca8f9a46a3fe3533154bd91, type: 3}
+  m_Name: EnemyCrossbowUnit
+  m_EditorClassIdentifier: 
+  unitCode: 204
+  unitName: "\uC790\uACBD\uB2E8-\uAD81\uBCD1"
+  unitType: Enemy
+  unitClass: Crossbow
+  maxHp: 80
+  movementSpeed: 2
+  missRate: 0
+  respawnUnitObject: {fileID: 4972936984483943875, guid: dc645257328e771418a3bfd9a38a1f90,
+    type: 3}
+  unitDrop: 2
+  attackEnabled: 1
+  attackDamage: 10
+  attackDelay: 0.5
+  attackCoolTime: 2
+  attackRadius: 5
+  viewRadius: 8
+  stateTransitionRadius: 8
+  unitAdvance: 2
+  unitCounter: 9
+  counterDamage: 200
+  counterKnockBack: 0
+  counterGuard: 0
+  bulletSpeed: 55
+  hitAnimationFrame: 12
