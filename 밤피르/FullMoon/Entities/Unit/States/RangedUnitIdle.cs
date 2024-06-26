@@ -1,49 +1,57 @@
-using System.Linq;
-using UnityEngine;
-using FullMoon.FSM;
-using Unity.Burst;
+/* Git Blame Auto Generated */
 
-namespace FullMoon.Entities.Unit.States
-{
-    [BurstCompile]
-    public class RangedUnitIdle : IState
-    {
-        private readonly RangedUnitController controller;
-
-        public RangedUnitIdle(RangedUnitController controller)
-        {
-            this.controller = controller;
-        }
-
-        public void Enter()
-        {
-            controller.AnimationController.SetAnimation("Idle");
-        }
-
-        [BurstCompile]
-        public void Execute()
-        {
-            var unitsInView = controller.Flag ? controller.Flag.UnitInsideViewArea : controller.UnitInsideViewArea;
-            int enemyCount = unitsInView.Count(t => !controller.UnitType.Equals(t.UnitType) && t.gameObject.activeInHierarchy && t.Alive);
-
-            if (enemyCount > 0)
-            {
-                controller.StateMachine.ChangeState(new RangedUnitChase(controller));
-                return;
-            }
-
-            if (controller.Flag != null)
-            {
-                Vector3 targetPosition = controller.Flag.GetPresetPosition(controller);
-                if (Vector3.Distance(controller.transform.position, targetPosition) > controller.Agent.stoppingDistance * 3f)
-                {
-                    controller.MoveToPosition(targetPosition);
-                }
-            }
-        }
-
-        public void FixedExecute() { }
-
-        public void Exit() { }
-    }
-}
+/* @LiF     - 2024-04-11 01:52:04 */ using System.Linq;
+/* @LiF     - 2024-04-11 01:52:04 */ using UnityEngine;
+/* @Lee SJ  - 2024-03-28 21:47:38 */ using FullMoon.FSM;
+/* @Lee SJ  - 2024-05-03 19:25:37 */ using Unity.Burst;
+/* @Lee SJ  - 2024-03-28 21:47:38 */ 
+/* @Lee SJ  - 2024-03-28 21:47:38 */ namespace FullMoon.Entities.Unit.States
+/* @Lee SJ  - 2024-03-28 21:47:38 */ {
+/* @Lee SJ  - 2024-05-03 19:25:37 */     [BurstCompile]
+/* @Lee SJ  - 2024-03-31 15:18:30 */     public class RangedUnitIdle : IState
+/* @Lee SJ  - 2024-03-28 21:47:38 */     {
+/* @Lee SJ  - 2024-03-28 21:47:38 */         private readonly RangedUnitController controller;
+/* @Lee SJ  - 2024-03-28 21:47:38 */ 
+/* @Lee SJ  - 2024-03-31 15:18:30 */         public RangedUnitIdle(RangedUnitController controller)
+/* @Lee SJ  - 2024-03-28 21:47:38 */         {
+/* @Lee SJ  - 2024-03-28 21:47:38 */             this.controller = controller;
+/* @Lee SJ  - 2024-03-28 21:47:38 */         }
+/* @Lee SJ  - 2024-05-13 21:39:50 */ 
+/* @Lee SJ  - 2024-05-13 21:39:50 */         public void Enter()
+/* @Lee SJ  - 2024-05-13 21:39:50 */         {
+/* @Lee SJ  - 2024-05-22 02:05:43 */             controller.AnimationController.SetAnimation("Idle");
+/* @Lee SJ  - 2024-05-13 21:39:50 */         }
+/* @Lee SJ  - 2024-03-28 21:47:38 */ 
+/* @Lee SJ  - 2024-05-03 19:25:37 */         [BurstCompile]
+/* @Lee SJ  - 2024-03-28 21:47:38 */         public void Execute()
+/* @Lee SJ  - 2024-03-28 21:47:38 */         {
+/* @LiF     - 2024-05-19 02:04:44 */             var unitsInView = controller.Flag ? controller.Flag.UnitInsideViewArea : controller.UnitInsideViewArea;
+/* @Lee SJ  - 2024-05-31 20:49:59 */             int enemyCount = unitsInView.Count(t => !controller.UnitType.Equals(t.UnitType) && t.gameObject.activeInHierarchy && t.Alive);
+/* @LiF     - 2024-05-19 02:04:44 */ 
+/* @LiF     - 2024-05-16 02:58:26 */             if (enemyCount > 0)
+/* @Lee SJ  - 2024-03-28 21:47:38 */             {
+/* @LiF     - 2024-05-16 02:58:26 */                 controller.StateMachine.ChangeState(new RangedUnitChase(controller));
+/* @Lee SJ  - 2024-03-28 21:47:38 */                 return;
+/* @Lee SJ  - 2024-03-28 21:47:38 */             }
+/* @LiF     - 2024-05-19 02:04:44 */ 
+/* @LiF     - 2024-05-19 02:04:44 */             if (controller.Flag != null)
+/* @LiF     - 2024-05-16 02:58:26 */             {
+/* @LiF     - 2024-05-16 02:58:26 */                 Vector3 targetPosition = controller.Flag.GetPresetPosition(controller);
+/* @LiF     - 2024-05-16 16:01:37 */                 if (Vector3.Distance(controller.transform.position, targetPosition) > controller.Agent.stoppingDistance * 3f)
+/* @LiF     - 2024-05-16 02:58:26 */                 {
+/* @LiF     - 2024-05-16 02:58:26 */                     controller.MoveToPosition(targetPosition);
+/* @LiF     - 2024-06-03 18:58:33 */                     return;
+/* @LiF     - 2024-05-16 02:58:26 */                 }
+/* @LiF     - 2024-05-16 02:58:26 */             }
+/* @LiF     - 2024-06-03 18:58:33 */             
+/* @LiF     - 2024-06-03 18:58:33 */             if (controller.UnitType.Equals("Enemy"))
+/* @LiF     - 2024-06-03 18:58:33 */             {
+/* @LiF     - 2024-06-03 18:58:33 */                 controller.MoveToPosition(Vector3.zero);
+/* @LiF     - 2024-06-03 18:58:33 */             }
+/* @Lee SJ  - 2024-03-28 21:47:38 */         }
+/* @Lee SJ  - 2024-03-28 21:47:38 */ 
+/* @LiF     - 2024-05-19 02:04:44 */         public void FixedExecute() { }
+/* @Lee SJ  - 2024-03-28 21:47:38 */ 
+/* @LiF     - 2024-05-19 02:04:44 */         public void Exit() { }
+/* @Lee SJ  - 2024-03-28 21:47:38 */     }
+/* @LiF     - 2024-05-19 02:04:44 */ }

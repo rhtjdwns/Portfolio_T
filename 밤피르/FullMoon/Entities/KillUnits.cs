@@ -1,40 +1,42 @@
-using System.Linq;
-using FullMoon.Entities.Unit;
-using MyBox;
-using UnityEngine;
+/* Git Blame Auto Generated */
 
-namespace FullMoon.Entities
-{
-    public class KillUnits : MonoBehaviour
-    {
-        [ButtonMethod]
-        public void KillAllUnits()
-        {
-            var units = GameObject.FindGameObjectsWithTag("Player")
-                .Where(unit => unit is not null 
-                               && unit.activeInHierarchy 
-                               && unit.GetComponent<BaseUnitController>().Alive)
-                .ToList();
-            
-            foreach (var unit in units)
-            {
-                unit.GetComponent<BaseUnitController>().Die();
-            }
-        }
-        
-        [ButtonMethod]
-        public void KillAllEnemies()
-        {
-            var units = GameObject.FindGameObjectsWithTag("Enemy")
-                .Where(unit => unit is not null 
-                               && unit.activeInHierarchy 
-                               && unit.GetComponent<BaseUnitController>().Alive)
-                .ToList();
-            
-            foreach (var unit in units)
-            {
-                unit.GetComponent<BaseUnitController>().Die();
-            }
-        }
-    }
-}
+/* @Lee SJ  - 2024-05-07 16:52:51 */ using System.Linq;
+/* @Lee SJ  - 2024-05-07 16:52:51 */ using FullMoon.Entities.Unit;
+/* @Lee SJ  - 2024-05-07 16:52:51 */ using MyBox;
+/* @Lee SJ  - 2024-05-07 16:52:51 */ using UnityEngine;
+/* @Lee SJ  - 2024-05-07 16:52:51 */ 
+/* @Lee SJ  - 2024-05-07 16:52:51 */ namespace FullMoon.Entities
+/* @Lee SJ  - 2024-05-07 16:52:51 */ {
+/* @Lee SJ  - 2024-05-07 16:52:51 */     public class KillUnits : MonoBehaviour
+/* @Lee SJ  - 2024-05-07 16:52:51 */     {
+/* @Lee SJ  - 2024-05-07 16:52:51 */         [ButtonMethod]
+/* @LiF     - 2024-05-30 13:40:00 */         public void KillAllUnits()
+/* @Lee SJ  - 2024-05-07 16:52:51 */         {
+/* @Lee SJ  - 2024-05-07 16:52:51 */             var units = GameObject.FindGameObjectsWithTag("Player")
+/* @Lee SJ  - 2024-05-07 16:52:51 */                 .Where(unit => unit is not null 
+/* @Lee SJ  - 2024-05-07 16:52:51 */                                && unit.activeInHierarchy 
+/* @Lee SJ  - 2024-05-07 16:52:51 */                                && unit.GetComponent<BaseUnitController>().Alive)
+/* @Lee SJ  - 2024-05-07 16:52:51 */                 .ToList();
+/* @Lee SJ  - 2024-05-07 16:52:51 */             
+/* @Lee SJ  - 2024-05-07 16:52:51 */             foreach (var unit in units)
+/* @Lee SJ  - 2024-05-07 16:52:51 */             {
+/* @Lee SJ  - 2024-05-07 16:52:51 */                 unit.GetComponent<BaseUnitController>().Die();
+/* @Lee SJ  - 2024-05-07 16:52:51 */             }
+/* @Lee SJ  - 2024-05-07 16:52:51 */         }
+/* @Lee SJ  - 2024-05-07 16:52:51 */         
+/* @Lee SJ  - 2024-05-07 16:52:51 */         [ButtonMethod]
+/* @LiF     - 2024-05-30 13:40:00 */         public void KillAllEnemies()
+/* @Lee SJ  - 2024-05-07 16:52:51 */         {
+/* @Lee SJ  - 2024-05-07 16:52:51 */             var units = GameObject.FindGameObjectsWithTag("Enemy")
+/* @Lee SJ  - 2024-05-07 16:52:51 */                 .Where(unit => unit is not null 
+/* @Lee SJ  - 2024-05-07 16:52:51 */                                && unit.activeInHierarchy 
+/* @Lee SJ  - 2024-05-07 16:52:51 */                                && unit.GetComponent<BaseUnitController>().Alive)
+/* @Lee SJ  - 2024-05-07 16:52:51 */                 .ToList();
+/* @Lee SJ  - 2024-05-07 16:52:51 */             
+/* @Lee SJ  - 2024-05-07 16:52:51 */             foreach (var unit in units)
+/* @Lee SJ  - 2024-05-07 16:52:51 */             {
+/* @Lee SJ  - 2024-05-07 16:52:51 */                 unit.GetComponent<BaseUnitController>().Die();
+/* @Lee SJ  - 2024-05-07 16:52:51 */             }
+/* @Lee SJ  - 2024-05-07 16:52:51 */         }
+/* @Lee SJ  - 2024-05-07 16:52:51 */     }
+/* @Lee SJ  - 2024-05-07 16:52:51 */ }
