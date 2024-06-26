@@ -55,8 +55,16 @@ https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
     - Unity로 개발중인 3D 디펜스 게임
     - 플레이어가 플레이하면서 사용할 수 있는 기능(건물 건설, 타일 설치, 유닛 생산 등등)을 주로 구현
     - 유니티의 Linq와 람다를 통한 코드 간결화, NavMesh에 대한 R&D로 플레이 중 베이크를 하면서 프레임이 떨어지지 않도록 한 경험이 있음.
-    - DOTS를 적용시킬 계획이었으나 DOTS를 쓸 만큼 리소스가 많지 않아 적용 시키진 못함. DOTS에 대한 이론과 사용법만 배운 상태.
     - Tilemap을 이용하여 3D 환경에서도 타일을 설치하고 NavMesh와 연동하여 유닛들이 설치한 타일 위를 인식할 수 있도록 함.
+
+    - 담당 코드
+        1. Camera > CameraController
+        2. UI > TileController, CursorController
+        3. Util > ObjectPoolManager
+        4. ScriptableObject > BaseUnitData, BaseBuildingData
+        5. NavMesh > NavMeshTag
+        6. Entities > Building 폴더 안 전부
+        
 
 https://youtu.be/vdxgS0z4MZg 기말 시연 영상
  
