@@ -58,6 +58,7 @@ https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
         4. ScriptableObject > BaseUnitData, BaseBuildingData
         5. NavMesh > NavMeshTag
         6. Entities > Building 폴더 안 전부
+        코드에 rhtjdwns 커밋 부분이 제가 담당, 수정했던 코드입니다.
         
 
 https://youtu.be/vdxgS0z4MZg 기말 시연 영상
