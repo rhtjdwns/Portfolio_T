@@ -1,6 +1,0 @@
-﻿  FSM.cpp
-  Ghost.cpp
-C:\Users\IN-209-13\source\repos\Pac\Pac\Util.h(33,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\IN-209-13\source\repos\Pac\Pac\Util.h(33,18): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  코드를 생성하고 있습니다...
-  Pac.vcxproj -> C:\Users\IN-209-13\source\repos\Pac\Debug\Pac.exe
