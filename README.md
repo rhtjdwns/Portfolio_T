@@ -57,9 +57,6 @@ https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
     - Tilemap 사용. 타일맵을 이용하여 실시간으로 지형을 설치할 수 있는 기능 구현
     - MyBox(https://github.com/Deadcows/MyBox) 원문을 해석, 번역하여 기능을 사용해 프로퍼티 정리
     - UniTask를 사용한 코드 최적화.
-    - 플레이어 유닛 FSM 플로우차트
-    ![image](https://github.com/user-attachments/assets/a8ecbbf3-f99c-4d51-921c-d792f4350c93)
-
 
     - 담당 코드
         1. Camera > CameraController
@@ -70,6 +67,8 @@ https://youtu.be/iLkqFxFq6Ko 최종 빌드 영상
         6. Entities > Building 폴더 안 전부
         코드에 rhtjdwns 커밋 부분이 제가 담당, 수정했던 코드입니다.
         
+플레이어 유닛 FSM 플로우차트
+    ![image](https://github.com/user-attachments/assets/a8ecbbf3-f99c-4d51-921c-d792f4350c93)
 
 https://youtu.be/vdxgS0z4MZg 기말 시연 영상
 
