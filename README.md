@@ -14,10 +14,11 @@
 - Birth : 2001/04/09
 - Email : ib041615@naver.com
 - Language & Engine : C#(Main) / C++ / C / Unity
-- Database : MYSQL
-- Git : Github Desktop / SourceTree
-- Environment : Window
-- ETC : Notion / Excel / Google Drive
+- Database & Server : MYSQL, MongoDB, IOCP, AWS
+- Git Tool : Github Desktop / SourceTree
+- Tooling : Visual Studio, Visual Studio Code
+- Environment : Window, Linux(기초)
+- ETC : Notion / Excel / Google Drive / Discord
 
 ### 인재상
 1. 배려 - 원활한 커뮤니케이션을 위해서 항상 타인의 입장을 생각하면서 말을 합니다. 갈등이 일어나지 않게 하기 위해서 먼저 양보, 배려하는 습관이 있습니다.
