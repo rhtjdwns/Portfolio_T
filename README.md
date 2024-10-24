@@ -40,6 +40,10 @@
 경채(중간보스 중 한명)의 유도 미사일 패턴을 위한 이동 코드
 ![image](https://github.com/user-attachments/assets/b6f33a6d-7956-4aaa-92bd-f78ede0ba130)
 
+플레이어의 커맨드 입력에 따른 공격을 위한 코드
+![image](https://github.com/user-attachments/assets/fda421a5-3add-4d9a-845e-611ff80712ba)
+
+
 참고 영상
 https://www.youtube.com/watch?v=_td_gm923iA
 
