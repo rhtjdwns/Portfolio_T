@@ -41,20 +41,30 @@
 - 스토브 인디게임 출품 [주소 : https://store.onstove.com/ko/games/4513]
 
 ### 인게임
-![Video Label](http://img.youtube.com/vi/xOaz8Ckg8aY/0.jpg)
+
+- 게임 플레이 영상
+  
+https://youtu.be/xOaz8Ckg8aY?si=lYkDuamOnC2qF-fY
+
+- 인게임 스크린 샷
+
+![image](https://github.com/user-attachments/assets/7afb6978-bda8-44ee-9f6f-aeaf16553677)
+![image](https://github.com/user-attachments/assets/12958982-2c48-4161-bb71-da6679502b41)
 
 
-(https://youtu.be/xOaz8Ckg8aY)
 
 ### 주요 기능
 
 경채(중간보스 중 한명)의 유도 미사일 패턴을 위한 로직 코드
+
 ![image](https://github.com/user-attachments/assets/b6f33a6d-7956-4aaa-92bd-f78ede0ba130)
 
 플레이어의 커맨드 입력에 따른 공격을 위한 로직 코드
+
 ![image](https://github.com/user-attachments/assets/fda421a5-3add-4d9a-845e-611ff80712ba)
 
 몬스터의 패턴은 Scriptable를 통하여 데이터를 관리하고 해당 클래스를 상속 받아 만들어지도록 설계
+
 ![image](https://github.com/user-attachments/assets/4e88564a-bdef-4f86-9403-cede74540e92)
 
 
@@ -109,14 +119,12 @@ https://youtu.be/vdxgS0z4MZg 기말 시연 영상
 ### 기능
 [UpdateNavMeshDataAsync]
 
-NavMeshBuilder에 있는 메소드인인 BuildNavMesh()는 런타임 중에서도 NavMesh를 빌드하여 갱신 시켜주지만 해당하는 프로젝트에서 이를 실행했을 경우 많은 프레임 저하가 나타나는 현상을 확인했다.
-
-이를 해결하기 위해 방법을 찾던 도중 NavMeshBuilder에 있는 또 다른 메소드인 UpdateNavMeshDataAsync를 발견했는데 이는 NavMesh 데이터를 업데이트 하는 동안 메인 스레드가 멈추지 않도록 할 수 있도록 하는 역할을 한다. 또한 이 메소드에는 Bound 라는 영역 값을 지정해줄 수 있는 인자가 있는데 이를 이용하여 원하는 특정 구간만 빌드를 해줄 수도 있다.
+BuildNavMesh()는 런타임 중에서도 NavMesh를 빌드하여 갱신 시켜주지만 해당하는 프로젝트에서 이를 실행했을 경우 많은 프레임 저하가 나타나는 현상을 확인. UpdateNavMeshDataAsync을 사용하여 해결.
 
 ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/5ce91407-4bc1-4cc4-b668-980593657b29)
 
 
-### 게임 스크린샷
+### 인게임
  
 ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/de9ae743-ec03-422a-b023-9e3547834c1f)
 ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/8a220b44-b6ce-4564-b972-0b2eea2e5813)
