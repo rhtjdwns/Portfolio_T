@@ -40,9 +40,11 @@
 
 - 스토브 인디게임 출품 [주소 : https://store.onstove.com/ko/games/4513]
 
-### 게임 스크린 샷
-![image](https://github.com/user-attachments/assets/92200c5f-0dcc-4d12-9b7c-ebdf81ee5c21)
-![image](https://github.com/user-attachments/assets/c1154ed4-7b6e-47d9-91d6-4fa113af5881)
+### 인게임
+![Video Label](http://img.youtube.com/vi/xOaz8Ckg8aY/0.jpg)
+
+
+(https://youtu.be/xOaz8Ckg8aY)
 
 ### 주요 기능
 
@@ -68,9 +70,10 @@
     - 이상한 나라의 L 폴더 안 코드 전부 제가 담당한 코드입니다.
 - 최종 빌드 영상 주소 [https://youtu.be/iLkqFxFq6Ko]  
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### 게임 스크린샷
+
+
+### 인게임
     
 ![mainbook](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/969d9273-eeb1-419e-807a-f7cd7fce1f99)
 ![스크린샷 2024-04-24 141225](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/a4fe6702-fc6a-4d7d-a14c-32752ab4ca6e)
