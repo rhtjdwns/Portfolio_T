@@ -56,15 +56,84 @@ https://youtu.be/xOaz8Ckg8aY?si=lYkDuamOnC2qF-fY
 
 ### 주요 기능
 
-경채(중간보스 중 한명)의 유도 미사일 패턴을 위한 로직 코드
+- 경채(중간보스 중 한명)의 유도 미사일 패턴을 위한 로직 코드
 
-![image](https://github.com/user-attachments/assets/b6f33a6d-7956-4aaa-92bd-f78ede0ba130)
+```
+if (!isGrounded && !isNonAuto)
+{
+    // 일정 시간 후 유도 해제
+    timer += Time.deltaTime;
+    if (timer > 1.8f)
+    {
+        isNonAuto = true;
+    }
 
-플레이어의 커맨드 입력에 따른 공격을 위한 로직 코드
+    // 중력 적용
+    rb.velocity += Vector3.up * Time.fixedDeltaTime;
 
-![image](https://github.com/user-attachments/assets/fda421a5-3add-4d9a-845e-611ff80712ba)
+    // 타겟 방향 계산
+    Vector3 directionToTarget = (player.position - transform.position).normalized + new Vector3(0, 0.5f);
 
-몬스터의 패턴은 Scriptable를 통하여 데이터를 관리하고 해당 클래스를 상속 받아 만들어지도록 설계
+    // 유도 힘 계산 (목표 방향을 더 강하게 반영)
+    Vector3 guidanceForce = directionToTarget * guidanceStrength;
+
+    // 미사일 속도 조정 (유도 로직 추가)
+    rb.velocity += guidanceForce * Time.fixedDeltaTime;
+
+    // 최대 속도 제한
+    rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
+
+    // 미사일의 앞 방향을 속도 벡터로 설정
+    transform.up = -rb.velocity.normalized;
+}
+```
+
+![유도미사일](https://github.com/user-attachments/assets/b2c51ee6-7099-41fd-95b0-c13923493941)
+
+
+- 플레이어의 커맨드 입력에 따른 공격을 위한 로직 코드
+
+```
+private bool CheckAttackCommand(List<KeyCode> keyList, int skillid, bool isBackDash)
+{
+    // 스킬 커맨드 검사하여 맞는 커맨드가 있다면 반환
+    var matchingSkillId = _skillCommand.commandDatas
+        .Where(cd => (isBackDash && cd.IsBack) || !cd.IsBack)
+        .Where(cd => cd.PossibleSkillId.Contains(skillid))
+        .Where(cd => ContainsSubsequence(keyList, cd.KeyCodes))
+        .Select(cd => cd.SkillId)
+        .FirstOrDefault(CheckUseSkill);
+
+    if (matchingSkillId != default)
+    {
+        _player.Ani.SetInteger("CommandCount", matchingSkillId);
+        return true;
+    }
+
+    return false;
+}
+
+private bool ContainsSubsequence(List<KeyCode> source, KeyCode[] target)
+{
+    if (target.Length == 0 || source.Count < target.Length)
+        return false;
+
+    // 플레이어가 왼쪽을 보고 있다면 오른쪽 키가 왼쪽을 입력하도록 변경
+    bool isLeftDir = _player.IsLeftDirection();
+    List<KeyCode> adjustedTarget = target.Select(key => isLeftDir ? 
+                                   (key == KeyCode.RightArrow ? KeyCode.LeftArrow : key == KeyCode.LeftArrow ? KeyCode.RightArrow : key) : key).ToList();
+
+    return Enumerable.Range(0, source.Count - adjustedTarget.Count + 1)
+        .Any(i => source.Skip(i).Take(adjustedTarget.Count + 1)
+        .SequenceEqual(adjustedTarget));
+}
+```
+
+- 플레이어 커맨드 입력 플로우차트
+![image](https://github.com/user-attachments/assets/95075cbc-eb42-4677-8b19-d6cf97a7577a)
+
+
+- 몬스터의 패턴은 Scriptable를 통하여 데이터를 관리하고 해당 클래스를 상속 받아 만들어지도록 설계
 
 ![image](https://github.com/user-attachments/assets/4e88564a-bdef-4f86-9403-cede74540e92)
 
