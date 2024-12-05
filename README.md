@@ -164,7 +164,7 @@ private bool ContainsSubsequence(List<KeyCode> source, KeyCode[] target)
 
 
 ### 주요 기능
-- 플레이어의 스킬 아이템 추상 클래스
+- 플레이어의 스킬 아이템 부모 클래스
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -199,6 +199,7 @@ public class BaseSkill : MonoBehaviour
 ```
 
 - 플레이어 스킬 아이템 클래스 다이어그램
+  
 ![image](https://github.com/user-attachments/assets/d0e4a101-665e-4288-aec8-863d48c25bf8)
 
 
