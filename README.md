@@ -226,24 +226,29 @@ public class BaseSkill : MonoBehaviour
     5. NavMesh > NavMeshTag
     6. Entities > Building 폴더 안 전부
     코드에 rhtjdwns 커밋 부분이 제가 담당, 수정했던 코드입니다.
-        
-플레이어 유닛 FSM 플로우차트
-    ![image](https://github.com/user-attachments/assets/a8ecbbf3-f99c-4d51-921c-d792f4350c93)
+
 
 https://youtu.be/vdxgS0z4MZg 기말 시연 영상
-
-### 기능
-[UpdateNavMeshDataAsync]
-
-BuildNavMesh()는 런타임 중에서도 NavMesh를 빌드하여 갱신 시켜주지만 해당하는 프로젝트에서 이를 실행했을 경우 많은 프레임 저하가 나타나는 현상을 확인. UpdateNavMeshDataAsync을 사용하여 해결.
-
-![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/5ce91407-4bc1-4cc4-b668-980593657b29)
 
 
 ### 인게임
  
 ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/de9ae743-ec03-422a-b023-9e3547834c1f)
 ![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/8a220b44-b6ce-4564-b972-0b2eea2e5813)
+
+
+### 주요 기능
+
+- 플레이어 유닛 FSM 플로우 차트
+![image](https://github.com/user-attachments/assets/a8ecbbf3-f99c-4d51-921c-d792f4350c93)
+
+
+- NavMesh 함수 UpdateNavMeshDataAsync()
+
+BuildNavMesh()는 런타임 중에서도 NavMesh를 빌드하여 갱신 시켜주지만 해당하는 프로젝트에서 이를 실행했을 경우 많은 프레임 저하가 나타나는 현상을 확인. UpdateNavMeshDataAsync을 사용하여 해결.
+
+![image](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/5ce91407-4bc1-4cc4-b668-980593657b29)
+
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
