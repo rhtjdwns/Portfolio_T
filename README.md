@@ -163,6 +163,42 @@ private bool ContainsSubsequence(List<KeyCode> source, KeyCode[] target)
 ![스크린샷 2024-04-24 141225](https://github.com/rhtjdwns/Portfolio_T/assets/64015904/a4fe6702-fc6a-4d7d-a14c-32752ab4ca6e)
 
 
+### 주요 기능
+- 플레이어의 스킬 추상 클래스
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class BaseSkill : MonoBehaviour
+{
+    [Header("Skill Info")]
+    protected int SkillId;
+    [SerializeField] protected float Damage;                // 데미지
+    [SerializeField] protected float Speed;                 // 속도
+    [SerializeField] protected float duration;              // 지속 시간
+    protected float scope;                                  // 공격 범위
+
+    protected Vector2 mouseDirection;                       // 마우스 방향
+
+    protected virtual void Awake()
+    {
+    }
+
+    protected virtual void LifeDuration()
+    {
+        duration -= Time.deltaTime;
+    }
+
+    public virtual void SetDamage(float damage)
+    {
+        Damage += damage;
+    }
+}
+```
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### "밤피르"
