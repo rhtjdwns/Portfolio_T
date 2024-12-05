@@ -137,6 +137,9 @@ private bool ContainsSubsequence(List<KeyCode> source, KeyCode[] target)
 
 ![image](https://github.com/user-attachments/assets/4e88564a-bdef-4f86-9403-cede74540e92)
 
+- 중간 보스 스킬 클래스 다이어그램
+![image](https://github.com/user-attachments/assets/f6956812-87da-4925-bbbc-70d62bab54a1)
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
