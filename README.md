@@ -31,6 +31,8 @@
 ## 프로젝트
 
 ### "프로젝트 아치카" 
+![image](https://github.com/user-attachments/assets/f03fd005-493d-41aa-8db1-3a7b3b78a46d)
+
 "아무 능력 없는 반 도꺠비, '첸'. 보름달이 뜨는 날 밤 이뤄지는 [도깨비 결전]. 아버지의 복수를 위해 첸은 신베이로 향한다."
 - 2024-09-23 ~ 2024-11-29 3개월 소요
 - 프로그래밍 1명, 기획 3명, 그래픽 13명, 사운드 1명으로 이루어진 팀 프로젝트
@@ -56,9 +58,86 @@ https://youtu.be/xOaz8Ckg8aY?si=lYkDuamOnC2qF-fY
 
 ### 주요 기능
 
+- 보스
+    1. 중간 보스 스킬 시스템
+    2. 중간 보스 FSM
+    3. 중간 보스 유도 미사일 패턴
+- 몬스터
+    1. 일반 몬스터 FSM
+    2. 일반 몬스터 피격 에어본
+- 플레이어
+    1. 플레이어 상태
+    2. 공격, 커맨드 시스템
+    3. 각성 버프
+- ETC
+    1. 애니메이션 이벤트
+    2. AWS DynamoDB 연
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+- 중간 보스 스킬 시스템
+
+몬스터의 패턴은 Scriptable를 통하여 데이터를 관리하고 Middle_Skill를 상속 받아 만들어지도록 설계
+
+![image](https://github.com/user-attachments/assets/4e88564a-bdef-4f86-9403-cede74540e92)
+
+중간 보스들은 해당 로직을 통해 현재 상태를 바꾸거나 패턴을 변경한다.
+
+```
+public void Enter()
+{
+    foreach (Middle_Skill s in _skillStorage)
+    {
+        s.Init(this);
+    }
+
+    _currentState = Define.MiddleMonsterState.NONE;
+
+    ChangeCurrentState(Define.MiddleMonsterState.IDLE);
+}
+
+public void Stay()
+{
+    if (_currentState != Define.MiddleMonsterState.NONE)
+    {
+        _stateStroage[_currentState]?.Stay();
+    }
+}
+
+public void ChangeCurrentState(Define.MiddleMonsterState state)
+{
+    if (_currentState != Define.MiddleMonsterState.NONE)
+    {
+        _stateStroage[_currentState]?.Exit();
+    }
+    _currentState = state;
+
+    if (_currentState != Define.MiddleMonsterState.NONE)
+    {
+        _stateStroage[_currentState]?.Enter();
+    }
+}
+```
+
+중간 보스 스킬 클래스 다이어그램
+
+![image](https://github.com/user-attachments/assets/f6956812-87da-4925-bbbc-70d62bab54a1)
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+- 중간 보스 FSM
+
+보스들은 해당 FSM에 따르며 HP가 0이 될 경우 다음 이벤트로 전환된다.
+
+![image](https://github.com/user-attachments/assets/da6ffa3a-bbda-4159-8e9b-cac1453d726b)
+
+----------------------------------------------------------------------------------------------------------------------
+
 - 경채(중간보스 중 한명)의 유도 미사일 패턴을 위한 로직 코드
 
 ```
+
 if (!isGrounded && !isNonAuto)
 {
     // 일정 시간 후 유도 해제
@@ -86,10 +165,60 @@ if (!isGrounded && !isNonAuto)
     // 미사일의 앞 방향을 속도 벡터로 설정
     transform.up = -rb.velocity.normalized;
 }
+
 ```
 
 ![유도미사일](https://github.com/user-attachments/assets/b2c51ee6-7099-41fd-95b0-c13923493941)
 
+----------------------------------------------------------------------------------------------------------------------
+
+- 일반 몬스터 FSM
+
+NormalMonster.cs의 Start 부분이다. Dictionary로 현재 상태를 Define.cs에서 정의한 Enum 타입 값과 각각의 상태 클래스를 저장하여 변화한다.
+
+```
+// Define.cs
+public enum PerceptionType
+{
+    IDLE, GUARD, HIT, DETECTIONM, SKILLATTACK, NORMALATTACK, TRACE, DEATH
+}
+
+// NormalMonster.cs
+private void Start()
+{
+    _perceptionStateStorage.Add(Define.PerceptionType.IDLE, new Normal_IdleState(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.HIT, new Normal_HitState(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.TRACE, new Normal_TraceState(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.GUARD, new Normal_GuardState(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.DETECTIONM, new Normal_Detectionm(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.SKILLATTACK, new Normal_SkillAttackState(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.NORMALATTACK, new Normal_NormalAttackState(this));
+    _perceptionStateStorage.Add(Define.PerceptionType.DEATH, new Normal_Death(this));
+
+    CurrentPerceptionState = Define.PerceptionType.IDLE;
+
+    _stat.Hp = _stat.MaxHp;
+
+    _target = CharacterManager.Instance.GetCharacter(PlayerLayer.value)[0].transform;
+
+    // 넉백 시 실행하는 이벤트
+    OnKnockback += () =>
+    {
+        float dir = _player.position.x - transform.position.x;
+        Direction = dir;
+    };
+
+    isAttack = true;
+}
+```
+
+일반 몬스터의 공격 플로우 차트
+
+![image](https://github.com/user-attachments/assets/659e839d-650e-4422-9a44-218fb2ef8def)
+
+
+
+----------------------------------------------------------------------------------------------------------------------
 
 - 플레이어의 커맨드 입력에 따른 공격을 위한 로직 코드
 
@@ -132,13 +261,6 @@ private bool ContainsSubsequence(List<KeyCode> source, KeyCode[] target)
 - 플레이어 커맨드 입력 플로우차트
 ![image](https://github.com/user-attachments/assets/95075cbc-eb42-4677-8b19-d6cf97a7577a)
 
-
-- 몬스터의 패턴은 Scriptable를 통하여 데이터를 관리하고 해당 클래스를 상속 받아 만들어지도록 설계
-
-![image](https://github.com/user-attachments/assets/4e88564a-bdef-4f86-9403-cede74540e92)
-
-- 중간 보스 스킬 클래스 다이어그램
-![image](https://github.com/user-attachments/assets/f6956812-87da-4925-bbbc-70d62bab54a1)
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
