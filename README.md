@@ -66,9 +66,7 @@ https://youtu.be/xOaz8Ckg8aY?si=lYkDuamOnC2qF-fY
     1. 일반 몬스터 FSM
     2. 일반 몬스터 피격 에어본
 - 플레이어
-    1. 플레이어 상태
-    2. 공격, 커맨드 시스템
-    3. 각성 버프
+    1. 공격, 커맨드 시스템
 - ETC
     1. 애니메이션 이벤트
     2. AWS DynamoDB 연동 
