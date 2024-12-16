@@ -212,10 +212,15 @@ private void Start()
 }
 ```
 
-- 일반 몬스터의 공격 플로우 차트
+일반 몬스터 FSM에 따른 공격 플로우 차트
 
 ![image](https://github.com/user-attachments/assets/659e839d-650e-4422-9a44-218fb2ef8def)
 
+- 일반 몬스터 피격 플로우 차트
+
+![image](https://github.com/user-attachments/assets/2b3aff5b-cf7d-427e-ba35-0fec4460df0f)
+
+![에어본](https://github.com/user-attachments/assets/f0dbf3ff-35bf-4201-8ecb-a43d39d193e0)
 
 
 ----------------------------------------------------------------------------------------------------------------------
