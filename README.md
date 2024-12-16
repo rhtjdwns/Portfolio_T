@@ -71,7 +71,7 @@ https://youtu.be/xOaz8Ckg8aY?si=lYkDuamOnC2qF-fY
     3. 각성 버프
 - ETC
     1. 애니메이션 이벤트
-    2. AWS DynamoDB 연
+    2. AWS DynamoDB 연동 
 
 -------------------------------------------------------------------------------------------------------------------------------
 
@@ -212,7 +212,7 @@ private void Start()
 }
 ```
 
-일반 몬스터의 공격 플로우 차트
+- 일반 몬스터의 공격 플로우 차트
 
 ![image](https://github.com/user-attachments/assets/659e839d-650e-4422-9a44-218fb2ef8def)
 
