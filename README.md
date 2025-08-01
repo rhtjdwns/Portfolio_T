@@ -341,12 +341,59 @@ public class BaseSkill : MonoBehaviour
 - 2024-02-02 ~ 2024-06-07 4개월 소요
 - 프로그래밍 2명, 기획 3명, 그래픽 9명, QA 1명으로 이루어진 팀 프로젝트
 - Unity 3D 탑뷰 디펜스 게임
-- 건물 건설, 타일 설치, 유닛 생산 기능 구현, 카메라 움직임과 마우스 클릭 관련 Raycast 구현
-- 유니티의 Linq와 람다를 통한 코드 간결화
-- NavMesh를 이용, 유닛 간에 이동, 공격, 정찰 FSM 구현
-- Tilemap 사용. 타일맵을 이용하여 실시간으로 지형을 설치할 수 있는 기능 구현
+- 유닛 생산 기능 구현, 카메라 움직임과 마우스 클릭 관련 Raycast 구현
+- For이나 Foreach문 같은 경우 코드의 길이가 길어지고 가독성이 떨어져 Linq와 람다식을 통해 코드 구조를 간결화 하였음
+- 실시간으로 인게임에서 건물 건설, 타일 설치하는 것은 TileMap이 낫다고 판단하여 3D에서 TileMap을 적용하는 방법을 찾아보고 이를 적용하였음
+- 유닛이 자동으로 생성되어 이동, 공격, 정찰하기 때문에 이에 대한 로직으로 FSM 패턴을sing System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class BaseSkill : MonoBehaviour
+{
+    [Header("Skill Info")]
+    protected int SkillId;
+    [SerializeField] protected float Damage;                // 데미지
+    [SerializeField] protected float Speed;                 // 속도
+    [SerializeField] protected float duration;              // 지속 시간
+    protected float scope;                                  // 공격 범위
+
+    protected Vector2 mouseDirection;                       // 마우스 방향
+
+    protected virtual void Awake()
+    {
+    }
+
+    protected virtual void LifeDuration()
+    {
+        duration -= Time.deltaTime;
+    }
+
+    public virtual void SetDamage(float damage)
+    {
+        Damage += damage;
+    }
+}
+```
+
+- 플레이어 스킬 아이템 클래스 다이어그램
+  
+![image](https://github.com/user-attachments/assets/d0e4a101-665e-4288-aec8-863d48c25bf8)
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 밤피르
+"평온하게 살고 있던 뱀파이어 밤피르. 자신들을 악으로 단정짓고 물리치러온 인간들을 상대하기 위해 오늘도 부하들을 이끈다."
+- 2024-02-02 ~ 2024-06-07 4개월 소요
+- 프로그래밍 2명, 기획 3명, 그래픽 9명, QA 1명으로 이루어진 팀 프로젝트
+- Unity 3D 탑뷰 디펜스 게임
+- For이나 Foreach문 같은 경우 코드의 길이가 길어지고 가독성이 떨어져 Linq와 람다식을 통해 코드 구조를 간결화 하였음
+- 실시간으로 인게임에서 건물 건설, 타일 설치하는 것은 TileMap이 낫다고 판단하여 3D에서 TileMap을 적용하는 방법을 찾아보고 이를 적용하였음
+- 유닛이 자동으로 생성되어 이동, 공격, 정찰하기 때문에 이에 대한 로직으로 FSM을 채택하여 현재 유닛의 상태에 따라서 다른 유닛간의 상호작용을 하도록 구현함.
 - MyBox(https://github.com/Deadcows/MyBox) 원문을 해석, 번역하여 기능을 사용해 프로퍼티 정리
-- UniTask를 사용한 코드 최적화.
+- 기존 유니티의 코루틴 같은 경우에는 예외처리를 할 수 없고 리턴 타입에 제한이 있으며 C#의 Task 같은 경우 class를 기반한 힙 할당으로 인하여 가비지 생성이 많기 때문에 struct 기반인 UniTask를 채택하였음. 
 
 - 담당 코드
     1. Camera > CameraController
