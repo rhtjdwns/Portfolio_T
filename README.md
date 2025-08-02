@@ -126,7 +126,8 @@ public void ChangeCurrentState(Define.MiddleMonsterState state)
 }
 ```
 
-중간 보스 스킬 클래스 다이어그램
+- 중간 보스 스킬 클래스 다이어그램
+- 결합도가 높아지는 것을 우려하여 중간 보스 클래스에 Middle_Skill을 주입하는 형식으로 코드를 구성하였음.
 
 ![image](https://github.com/user-attachments/assets/f6956812-87da-4925-bbbc-70d62bab54a1)
 
