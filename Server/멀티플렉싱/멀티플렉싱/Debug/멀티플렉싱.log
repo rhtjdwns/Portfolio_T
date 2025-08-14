@@ -1,4 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (멀티플렉싱.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  multyFlating.cpp
-C:\Users\user\source\repos\서버\멀티플렉싱\멀티플렉싱\multyFlating.cpp(58,17): warning C4018:  '<': signed 또는 unsigned가 일치하지 않습니다.
-  멀티플렉싱.vcxproj -> C:\Users\user\source\repos\서버\멀티플렉싱\Debug\multyFlating.exe
